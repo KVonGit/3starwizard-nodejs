@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             statusMessage.textContent = '';
             statusMessage.className = '';
-            loadStreaks();
+            // loadStreaks();
         }, 3000);
     }
 
@@ -45,8 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check the password and execute callback if correct
     function checkPassword() {
         const password = passwordInput.value;
-        
-        if (password === '1234') {
+        const actualPassword = (+!+[] + +!+[] + +!+[] + +!+[]) * 1000 + (+!+[] + +!+[] + +!+[]) * 100 + (+!+[] + +!+[]) * 10 + (+!+[] + +!+[] + +!+[] + +!+[]) - (3*1030);
+
+        if (password == actualPassword) {
+            // Password is correct, execute the callback
             // Set the authenticated flag in sessionStorage
             sessionStorage.setItem('authenticated', 'true');
             hasAuthenticated = true;
