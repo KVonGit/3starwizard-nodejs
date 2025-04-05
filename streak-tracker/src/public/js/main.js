@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalError = document.getElementById('modalError');
     
     let currentCallback = null;
+    let hasAuthenticated = sessionStorage.getItem('authenticated') === 'true';
     
     // Helper to display status messages
     function showMessage(message, isError = false) {
@@ -27,17 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Modal password verification
     function verifyPassword(callback) {
-        // Store the callback for later use
-        currentCallback = callback;
+        // If already authenticated in this session, skip the password check
+        if (hasAuthenticated) {
+            callback();
+            return;
+        }
         
-        // Clear any previous input and errors
+        // Otherwise, continue with the password modal
+        currentCallback = callback;
         passwordInput.value = '';
         modalError.style.display = 'none';
-        
-        // Show the modal
         modal.style.display = 'block';
-        
-        // Focus on the password input
         passwordInput.focus();
     }
     
@@ -46,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = passwordInput.value;
         
         if (password === '1234') {
+            // Set the authenticated flag in sessionStorage
+            sessionStorage.setItem('authenticated', 'true');
+            hasAuthenticated = true;
+            
             // Hide the modal
             modal.style.display = 'none';
             
@@ -100,7 +105,11 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 streakBody.innerHTML = '';
                 
-                for (const [user, streak] of Object.entries(data)) {
+                // Convert object to array and sort by streak in descending order
+                const sortedEntries = Object.entries(data)
+                    .sort((a, b) => b[1] - a[1]);
+                
+                for (const [user, streak] of sortedEntries) {
                     const row = document.createElement('tr');
                     
                     row.innerHTML = `

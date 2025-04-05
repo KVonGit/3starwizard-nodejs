@@ -1,12 +1,20 @@
 {
   "John": 1,
   "Paul": 0,
-  "George": 0,
-  "Ringo": 0,
-  "Moe": 0,
-  "Larry": 0,
+  "George": 1,
+  "Ringo": 1,
+  "Moe": 1,
+  "Larry": 1,
   "Curly": 0,
-  "Shemp": 0,
+  "Shemp": 2,
   "Joe": 0,
-  "Curly Joe": 0
+  "Curly Joe": 0,
+  "Dante": 0,
+  "Randal": 0,
+  "Caitlyn": 0,
+  "Veronica": 0,
+  "Jay": 0,
+  "Bob": 3,
+  "Walt": 0,
+  "Steve Dave": 0
 }
