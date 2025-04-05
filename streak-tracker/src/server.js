@@ -26,7 +26,9 @@ app.use('/api', require('./routes/api'));
 
 // Serve the main HTML page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.render('index', { 
+        password: process.env.THREE_STAR_PASSWORD 
+    });
 });
 
 // Start the server
