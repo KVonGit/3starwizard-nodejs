@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check the password and execute callback if correct
     function checkPassword() {
         const password = passwordInput.value;
-        const actualPassword = (+!+[] + +!+[] + +!+[] + +!+[]) * 1000 + (+!+[] + +!+[] + +!+[]) * 100 + (+!+[] + +!+[]) * 10 + (+!+[] + +!+[] + +!+[] + +!+[]) - (3*1030);
+        const actualPassword = ((+!+[] + +!+[] + +!+[] + +!+[]) * 1000 + (+!+[] + +!+[] + +!+[]) * 100 + (+!+[] + +!+[]) * 10 + (+!+[] + +!+[] + +!+[] + +!+[]) - (3*1030)) - 913;
 
         if (password == actualPassword) {
             // Password is correct, execute the callback
