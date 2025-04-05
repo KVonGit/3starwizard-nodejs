@@ -17,7 +17,7 @@ streak-tracker
 │   │   └── js
 │   │       └── main.js     # JavaScript for fetching data and handling user interactions
 │   └── data
-│       └── streaks.json    # JSON file storing user data and streaks
+│       └── streakdata.json    # JSON file storing user data and streaks
 ├── package.json            # npm configuration file
 └── README.md               # Project documentation
 ```
