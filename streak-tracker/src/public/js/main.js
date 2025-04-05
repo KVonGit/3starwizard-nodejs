@@ -45,8 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check the password and execute callback if correct
     function checkPassword() {
         const password = passwordInput.value;
-        
-        if (password === '1234') {
+
+        if (password === window.ENV.PASSWORD) {
+            // Password is correct, execute the callback
+
             // Set the authenticated flag in sessionStorage
             sessionStorage.setItem('authenticated', 'true');
             hasAuthenticated = true;
