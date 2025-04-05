@@ -5,9 +5,9 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Create data directory and streaks.json file if they don't exist
+// Create data directory and streakdata.json file if they don't exist
 const dataDir = path.join(__dirname, 'data');
-const dataFile = path.join(dataDir, 'streaks.json');
+const dataFile = path.join(dataDir, 'streakdata.json');
 
 if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir);

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const path = require('path');
-const dataPath = path.join(__dirname, '../data/streaks.json');
+const dataPath = path.join(__dirname, '../data/streakdata.json');
 
 // Helper functions
 const readData = () => {
