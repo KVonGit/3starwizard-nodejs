@@ -251,3 +251,130 @@ close-modal:hover {
 #cancelPasswordBtn:hover {
     background-color: #bbb;
 }
+
+/* Table layout improvements */
+#streakTable {
+    table-layout: fixed; /* Fixed layout for more predictable column widths */
+}
+
+/* Column width distribution */
+#streakTable th:nth-child(1) {
+    width: 60%; /* Username column - wider */
+}
+
+#streakTable th:nth-child(2) {
+    width: 20%; /* Streak column - narrower */
+    text-align: center;
+}
+
+#streakTable th:nth-child(3) {
+    width: 20%; /* Actions column - narrower */
+    text-align: center;
+}
+
+/* Align cell content */
+#streakTable td:nth-child(2) {
+    text-align: center; /* Center streak numbers */
+    font-weight: bold;
+}
+
+#streakTable td:nth-child(3) {
+    text-align: center; /* Center the action buttons */
+}
+
+/* Action buttons styling */
+#streakTable .increment-btn,
+#streakTable .delete-btn {
+    width: 30px;
+    height: 30px;
+    margin: 0 3px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Row hover effect */
+#streakTable tbody tr:hover {
+    background-color: var(--darker-bg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        padding: 10px;
+    }
+    
+    /* Banner image */
+    .banner-image {
+        width: 50%; /* Slightly larger on mobile */
+    }
+    
+    /* Form adjustments */
+    .form-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    input, button {
+        width: 100%;
+        padding: 12px; /* Larger touch targets */
+    }
+    
+    /* Table adjustments */
+    #streakTable {
+        font-size: 14px;
+    }
+    
+    #streakTable th, #streakTable td {
+        padding: 8px 4px;
+    }
+    
+    /* Adjust column widths for mobile */
+    #streakTable th:nth-child(1) {
+        width: 50%;
+    }
+    
+    #streakTable th:nth-child(2), 
+    #streakTable th:nth-child(3) {
+        width: 25%;
+    }
+    
+    /* Make action buttons slightly larger on mobile for easier touch */
+    #streakTable .increment-btn,
+    #streakTable .delete-btn {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .banner-image {
+        width: 70%;
+    }
+    
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    
+    #streakTable {
+        font-size: 13px;
+    }
+    
+    /* Make table take up all available space */
+    #streakTable th:nth-child(1) {
+        width: 45%;
+    }
+    
+    #streakTable th:nth-child(2) {
+        width: 20%;
+    }
+    
+    #streakTable th:nth-child(3) {
+        width: 35%; /* More space for buttons */
+    }
+}
