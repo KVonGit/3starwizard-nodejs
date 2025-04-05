@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             statusMessage.textContent = '';
             statusMessage.className = '';
-            loadStreaks();
+            // loadStreaks();
         }, 3000);
     }
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check the password and execute callback if correct
     function checkPassword() {
         const password = passwordInput.value;
-
+      
         if (password === window.ENV.PASSWORD) {
             // Password is correct, execute the callback
 
