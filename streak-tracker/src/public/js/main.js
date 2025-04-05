@@ -17,12 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Helper to display status messages
     function showMessage(message, isError = false) {
+        if (!message) {
+            statusMessage.textContent = '';
+            statusMessage.className = ''; // Remove all classes
+            return;
+        }
+        
         statusMessage.textContent = message;
         statusMessage.className = isError ? 'status-message error' : 'status-message success';
+        
         setTimeout(() => {
             statusMessage.textContent = '';
-            statusMessage.className = '';
-            // loadStreaks();
+            statusMessage.className = ''; // Remove all classes
         }, 3000);
     }
 
