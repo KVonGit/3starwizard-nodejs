@@ -147,6 +147,34 @@ tr:nth-child(odd) {
     color: #f5c6cb;
 }
 
+#status-message {
+    display: none; /* Hide by default when empty */
+    min-height: 40px;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    background-image: url('/images/img.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Show with styling when it has content */
+#status-message.success, 
+#status-message.error {
+    display: block; /* Show when it has a class */
+}
+
+#status-message.success {
+    background-color: rgba(40, 167, 69, 0.7); /* Semi-transparent green */
+}
+
+#status-message.error {
+    background-color: rgba(220, 53, 69, 0.7); /* Semi-transparent red */
+}
+
 /* Modal Styles */
 .modal {
     display: none;
