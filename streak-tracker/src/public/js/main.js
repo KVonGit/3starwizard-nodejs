@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Modal event listeners
+    addUserBtn.addEventListener('click', checkPassword);
+    
     submitPasswordBtn.addEventListener('click', checkPassword);
     
     cancelPasswordBtn.addEventListener('click', closeModal);
