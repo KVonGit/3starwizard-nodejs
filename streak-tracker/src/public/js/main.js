@@ -86,8 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Modal event listeners
-    addUserBtn.addEventListener('click', checkPassword);
-    
     submitPasswordBtn.addEventListener('click', checkPassword);
     
     cancelPasswordBtn.addEventListener('click', closeModal);
@@ -231,13 +229,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event listeners
     addUserBtn.addEventListener('click', () => {
-        addUser(userInput.value.trim());
+        verifyPassword(() => addUser(userInput.value.trim()));
     });
-    
+
     // Add keyboard event listener for Enter key in the input field
     userInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
-            addUser(userInput.value.trim());
+            verifyPassword(() => addUser(userInput.value.trim()));
         }
     });
 
